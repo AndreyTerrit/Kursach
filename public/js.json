@@ -1,0 +1,32 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "author": "Author1",
+      "body": "Body 1",
+      "published": true,
+      "src":"https://img1.akspic.ru/originals/0/5/4/5/85450-chikago-gorodskoj_rajon-neboskreb-gorod-s_vysoty_ptichego_poleta-3840x2160.jpg"
+    },
+    {
+      "id":2,
+      "author": "Author2",
+      "body": "Body 2",
+      "published": false,
+      "src":"https://s1.1zoom.ru/big7/257/Moscow_Rivers_Russia_502334.jpg"
+    },
+    {
+      "id":3,
+      "author": "Author3",
+      "body": "Body 3",
+      "published": true,
+      "src":"https://i.artfile.ru/1920x1200_460586_[www.ArtFile.ru].jpg"
+    },
+    {
+      "id":4,
+      "author": "Author4",
+      "body": "Body 4",
+      "published": false,
+      "src":"https://c.pxhere.com/images/37/60/4858e3b53b3accf360bdafdbf096-1576425.jpg!d"
+    }
+  ]
+}
