@@ -53,7 +53,7 @@
                 <v-btn
                     color="primary"
                     text
-                    @click="reload_articles"
+                    @click="reload_products"
                 >
                     Да
                 </v-btn>
@@ -71,41 +71,90 @@
             </v-dialog>
         </div>
         <!-- ПРИ УСПЕШНОЙ ЗАГРУЗКЕ -->
-        <div v-if="$store.state.articles.length > 0 && $store.state.load_modules.problem_state == 'succeeded'">
+        <div v-if="product_list.length > 0 && $store.state.load_modules.problem_state == 'succeeded'">
     <v-container >
         
     <v-row justify="center">
-    <router-link v-for="article in $store.state.articles"
-                 :key="article.id"
-                 :to="'/Article/' + article.id"
-                 >
+        <!--product_list - вычисляемое св-во в computed из  $store.state.products...  Здесь происходит вывод списка продуктов конкретного ресторана-->
+    <!-- <router-link 
+                 > -->
                 <v-col
+                v-for="product in product_list" 
+                 :key="product.id"
                 >
                     <v-card
-                    elevation="10"
-                    class="mx-auto"
-                    max-width="344px"
-                    outlined
+                        elevation="10"
+                        class="mx-auto"
+                        max-width="344px"
+                        outlined
                     >
-                
-                    <v-img
-                    :src="article.src"
-                    height="200px"
-                    min-width="344px"
-                    ></v-img>
-
+                    <router-link :to="'/product/' + product.id">
+                        <v-img
+                            :src="product.src"
+                            height="200px"
+                            min-width="344px"
+                        >
+                        </v-img>
+                    </router-link>
                     <v-container>
-                        <v-card-title class="text-align-center">
-                        <h3>{{article.author}}</h3>
+                        <router-link :to="'/product/' + product.id">
+                        <div style="color:black">
+                        <v-card-title class=" text-center">
+                            <h3 class="text-h4 text--primary">{{product.name}}</h3>
                         </v-card-title>
-                    </v-container>
+                        <v-divider></v-divider>
+                        <v-card-text class="pb-0">
+                            <v-row>
+                                <v-col>
+                                    <p class="">
+                                    {{product.weight + product.units_of_measurement}}
+                                    </p>
+                                </v-col>
+                                <v-spacer></v-spacer>
+                                
+                                <v-col
+                                    sm="6"
+                                    xs="6"
+                                    cols="6"
+                                >
+                                
+                                    <p class="pl-4">
+                                    {{"БЖУ : " + product.PCF}}
+                                    </p>
+                                </v-col>
+                            </v-row>
+                            <p>{{product.body}} </p>
+                        </v-card-text>
+                        <v-divider></v-divider>
+                        <v-card-text class="pb-0">
+                            <v-row>
+                                <v-col>
+                                    <p class="font-weight-bold text--primary">Стоимость : </p>
+                                </v-col>
+                                <v-col
+                                    sm="3"
+                                    cols="3"
+                                >
+                                    <p class="font-weight-bold text--primary">{{product.cost + " ₽"}}</p>
+                                </v-col>
+                            </v-row>
+                        </v-card-text>
+                        </div>
+                        </router-link>
 
-                    <v-card-subtitle>
-                    {{article.body}}
-                    </v-card-subtitle>
+                        <div class="text-center">
+                        <v-btn
+                            class="ma-2"
+                            outlined
+                            color="#1976d2"
+                        >
+                            В корзину
+                        </v-btn>
+                        </div>
+                    </v-container>
                 </v-card>
             </v-col>
-    </router-link>
+    
     </v-row>
     </v-container>
   </div>
@@ -124,10 +173,14 @@ export default {
   },
   data(){
     return{
-      article: {
-        author: this.author,
-        body: this.author,
+      product: {
+        name: this.name,
+        cost: this.cost,
+        PCF: this.PCF,
+        body: this.body,
         published: this.published,
+        weight: this.weight,
+        units_of_measurement:this.units_of_measurement,
         src:this.src
       },
       dialog: false,
@@ -136,14 +189,19 @@ export default {
   ,
   name: "ArticleList",
   methods:{
-    reload_articles(){
+    reload_products(){
       store.state.load_modules.problem_state = types.request_status.REQUESTED;
-      store.dispatch(types.actions.PARSE_ARTICLES);
+      store.dispatch('allww');
       this.dialog = false;
     },
     cancel_parse(){
       store.dispatch(types.actions.CANCEL_PARSE)
     }
+  },
+  computed:{
+      product_list(){
+          return this.$store.state.products;
+      }
   }
 
 }
@@ -172,6 +230,7 @@ export default {
 a{
     text-decoration: none;
 }
+
 
 .loading{
     text-align: center;

@@ -9,7 +9,7 @@
      id="author_name"
      placeholder="Введите имя Автора"
 
-      v-model="article.author"
+      v-model="product.author"
       label="Автор"
       required
     ></v-text-field>
@@ -19,11 +19,11 @@
           name="input-7-4"
           label="Тело статьи"
           value="Введите что-то"
-          v-model="article.body"
+          v-model="product.body"
         ></v-textarea>
 
     <v-checkbox
-      v-model="article.published"
+      v-model="product.published"
       label="Опубликовать сразу?"
     ></v-checkbox>
 
@@ -32,7 +32,7 @@
         color="#e4dede"
         id="subbtn"
         class="mr-4"
-        @click="add_art(article);"
+        @click="add_prod(product);"
         >
         Опубликовать
         </v-btn>
@@ -53,14 +53,14 @@ export default {
     published: Boolean
   },
   methods:{
-    add_art(value) {
-      store.dispatch(types.actions.ADD_ARTICLE,value);
+    add_prod(value) {
+      store.dispatch(types.actions.ADD_product,value);
       this.$router.push('/');
     }
   },
   data(){
     return{
-      article: {
+      product: {
         author: this.author,
         body: this.author,
         published: this.published

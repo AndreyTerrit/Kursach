@@ -1,21 +1,21 @@
 export const types = {
     mutations:{
-        ADD_ART: 'add_art',
+        ADD_prod: 'add_prod',
         CHANGE_STATUS: 'change_status',
-        ADD_ALL_ARTICLES:'add_all_articles',
-        ARTICLES_FAILED: 'ARTICLES_FAILED',
-        ARTICLES_REQUESTED : 'ARTICLES_REQUESTED'
+        ADD_ALL_products:'add_all_products',
+        products_FAILED: 'products_FAILED',
+        products_REQUESTED : 'products_REQUESTED'
     },
     actions:{
-        PARSE_ARTICLES: 'load_modules/parse_articles',
-        ADD_ARTICLE : 'add_article',
+        PARSE_products: 'load_modules/parse_products',
+        ADD_product : 'add_product',
         CANCEL_PARSE : 'load_modules/cancel_parse'
     },
     request_status: {
         REQUESTED: 'requested',
         SUCCEEDED: 'succeeded',
         FAILED: 'failed',
-        ARTICLES_LOADING : 'articles_loading',
+        products_LOADING : 'products_loading',
       }
     
 };

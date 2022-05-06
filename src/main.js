@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import vuetify from './plugins/vuetify'
 
-store.dispatch('load_modules/parse_articles');
+store.dispatch('load_modules/parse_products');
 
 Vue.config.productionTip = false
 

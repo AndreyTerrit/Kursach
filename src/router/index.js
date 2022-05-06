@@ -23,9 +23,9 @@ const routes = [
     component: AddForm
   },
   {
-    path: '/Article/:id',
+    path: '/product/:id',
     component: MyArticle,
-    props: (route) => store.state.articles.find((x) => x.id == route.params.id)
+    props: (route) => store.state.products.find((x) => x.id == route.params.id)
   },
   {
     path: '/about',

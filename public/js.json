@@ -1,32 +1,76 @@
 {
-  "articles": [
+  "products": [
     {
       "id": 1,
-      "author": "Author1",
-      "body": "Body 1",
+      "id_restaurant":1,
+      "name": "product 1",
+      "cost": 600,
+      "PCF" : "141, 30, 90.",
+      "weight": "100" ,
+      "units_of_measurement" : "g",
+      "body": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’",
+      "quantity": 3,
       "published": true,
-      "src":"https://img1.akspic.ru/originals/0/5/4/5/85450-chikago-gorodskoj_rajon-neboskreb-gorod-s_vysoty_ptichego_poleta-3840x2160.jpg"
+      "src":"https://www.thmmagazine.fr/wp-content/uploads/2020/04/Big-Mac-Menu.jpg"
     },
     {
       "id":2,
-      "author": "Author2",
-      "body": "Body 2",
-      "published": false,
-      "src":"https://s1.1zoom.ru/big7/257/Moscow_Rivers_Russia_502334.jpg"
+      "id_restaurant":1,
+      "name": "product 2",
+      "cost": 550,
+      "PCF" : "142, 30, 90.",
+      "weight": "150",
+      "units_of_measurement" : "g",
+      "body": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’",
+      "quantity": 5,
+      "src":"https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/53/2019/01/mcdonald_s-Mac-Jr-Bacon_264301131_477043482.jpg"
     },
     {
       "id":3,
-      "author": "Author3",
-      "body": "Body 3",
-      "published": true,
-      "src":"https://i.artfile.ru/1920x1200_460586_[www.ArtFile.ru].jpg"
+      "id_restaurant":1,
+      "name":"product 3",
+      "cost": 340,
+      "PCF" : "143, 30, 90.",
+      "weight": "130",
+      "units_of_measurement" : "g",
+      "body": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’",
+      "quantity": 10,
+      "src":"https://www.mcdonalds.cz/uploads/images/productCategory/1/5f484c15ca0bb75bffd25c3486fa51c3.jpeg"
     },
     {
       "id":4,
-      "author": "Author4",
-      "body": "Body 4",
-      "published": false,
-      "src":"https://c.pxhere.com/images/37/60/4858e3b53b3accf360bdafdbf096-1576425.jpg!d"
+      "id_restaurant":1,
+      "name": "product 4",
+      "cost": 400,
+      "PCF" : "144, 30, 90.",
+      "weight": "240",
+      "units_of_measurement" : "g",
+      "body": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’",
+      "quantity": 23,
+      "src":"https://a.mktgcdn.com/p/w40Aw5HgkwpVawzHI1dEk0sxXWOS_Gz2ZmRj-mwCFio/1025x768.jpg"
     }
+  ],
+  "restaurant":[
+      {
+        "id_restaurant":1,
+        "telephone": "891811111111",
+        "address":"Уральская 79/1",
+        "name":"MCdonald's",
+        "email":"example1@mc.ru"
+      },
+      {
+        "id_restaurant":2,
+        "telephone": "8918222222222",
+        "address":"Уральская 79/2",
+        "name":"KFC",
+        "email":"example2@mc.ru"
+      },
+      {
+        "id_restaurant":3,
+        "telephone": "891833333333",
+        "address":"Уральская 79/3",
+        "name":"Sushi",
+        "email":"example3@mc.ru"
+      }
   ]
 }

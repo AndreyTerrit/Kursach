@@ -1,66 +1,102 @@
 <template>
 <div class="">
     <v-card
-    class="mx-auto"
-    max-width="600px"
-  >
-  <div :class="{published: published, unpublished: !published}" class="art"  >
-    <v-img
-      :src="src"
-      height="200px"
-    ></v-img>
-
-    <v-card-title>
-      {{author}}
-    </v-card-title>
-
-    <v-card-subtitle>
-      Может быть что-то написано
-    </v-card-subtitle>
-<v-divider></v-divider>
-    <v-card-actions>
-      <v-btn
-        color="orange lighten-2"
-        text
-         @click="show = !show"
-      >
-        Раскрыть статью
-      </v-btn>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        icon
-        @click="show = !show"
-      >
-        <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
-      </v-btn>
-    </v-card-actions>
-
-    <v-expand-transition>
-      <div v-show="show">
+    class="mx-3 "
+    >
+    
+    <div class="art"  >
+        <v-img
+            :src="src"
+            max-height="360px"
+        ></v-img>
+        <v-divider></v-divider><v-divider></v-divider><v-divider></v-divider>
+        <v-card-title class="text-h3">
+            <v-spacer><div class="text-center fff">{{name}}</div></v-spacer>
+        </v-card-title>
         <v-divider></v-divider>
+        <v-spacer></v-spacer>
+        <v-card-subtitle>
+            <v-row>
+                <v-spacer></v-spacer>
+                <v-col>
+                    <p class="text-h6">
+                    {{weight + units_of_measurement}}
+                    </p>
+                </v-col>
+                <v-spacer></v-spacer>
+                
+                <v-col
+                    sm="5"
+                    xs="5"
+                    cols="5"
+                >
+                    <p class="pl-4 text-h6">
+                    {{"БЖУ : " + PCF}}
+                    </p>
+                </v-col>
+                
+            </v-row>
+        </v-card-subtitle>
+        <v-divider></v-divider>
+        <v-card-actions class="pb-0">
+            <v-btn
+                color="orange lighten-2"
+                text
+                @click="show = !show"
+            >
+                Подробнее
+            </v-btn>
+        <v-spacer></v-spacer>
+            <v-btn
+                icon
+                @click="show = !show"
+            >
+                <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+            </v-btn>
+        </v-card-actions>
 
-        <v-card-text>
-          {{body}}
-        </v-card-text>
-        <CheckBox :id="id" :published="published" @change-one = "$emit('change-publishing',id)" class="ml-3"></CheckBox> Опубликовано
-      </div>
-    </v-expand-transition>
+        <v-expand-transition>
+            <div v-show="show">
+                <v-divider></v-divider>
+
+                <v-card-text>
+                    {{body}}
+                    <br>
+                    <br>
+                    {{"Остаток : " + quantity + " шт."}}
+                </v-card-text>
+                  
+                    <CheckBox :id="id" :published="published" @change-one = "$emit('change-publishing',id)" class="ml-3"></CheckBox> Опубликовано
+            </div>
+        </v-expand-transition> 
+        
     </div >
   </v-card>
+  <div class="text-center">
+      <p class="text-h2"> Попробуйте также !</p>
+  </div>
+    <MyCarousel :id = this.id></MyCarousel>
 </div>
 </template>
 
 <script>
+import MyCarousel from "./MyCarousel.vue"
 export default {
   name: "MyArticle",
+  components:{
+      MyCarousel,
+  },
   props:{
     id: Number,
-    author: String,
+    name: String,
+    cost: Number,
+    PCF: String,
     body: String,
-    published: Boolean,
-    src: String
+    weight: Number,
+    units_of_measurement: String,
+    src: String,
+    quantity:Number,
+    published: Boolean
   },
   data(){
     return{
@@ -82,6 +118,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 .published{
     border: 3px solid rgb(50, 233, 105);
 }

@@ -7,29 +7,29 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    articles: [],
+    products: [],
   },
   getters: {
   },
   mutations: {
-    add_art(state, value){
-      let new_article = {
-        id: state.articles[state.articles.length-1].id+1,
+    add_prod(state, value){
+      let new_product = {
+        id: state.products[state.products.length-1].id+1,
         ...value
       }
-      state.articles.push(new_article);
-      console.log(new_article.id);
+      state.products.push(new_product);
+      console.log(new_product.id);
     },
     change_status(state, id){
-      state.articles[id-1].published = !state.articles[id-1].published;
+      state.products[id-1].published = !state.products[id-1].published;
     },
-    add_all_articles(state, articles){
-      state.articles = articles;
+    add_all_products(state, products){
+      state.products = products;
     }
   },
   actions: {
-    add_article(context, value){
-      context.commit('add_art', value);
+    add_product(context, value){
+      context.commit('add_prod', value);
     }
   },
   modules: {

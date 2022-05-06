@@ -13,32 +13,32 @@ let load_module= {
         problem_state: "",
     },
     mutations:{
-        ARTICLES_REQUESTED(state) {
+        products_REQUESTED(state) {
             state.problem_state = types.request_status.REQUESTED;
         },
-        ARTICLES_FAILED(state, error) {
-            state.articles_error = error;
+        products_FAILED(state, error) {
+            state.products_error = error;
             state.problem_state = types.request_status.FAILED;
         },
     },
     actions:{
-        parse_articles({ state, commit}){
+        parse_products({ state, commit}){
             let controller_parse = new AbortController();
             controller = controller_parse;
-            commit(types.mutations.ARTICLES_REQUESTED);
+            commit(types.mutations.products_REQUESTED);
             Vue.axios
-                .get('http://localhost:10000/articles',{
+                .get('http://localhost:10000/products',{ //СЕЙЧАС УКАЗАНО ЛОКАЛЬНО, А ВООБЩЕ ПО URL
                     signal: controller_parse.signal
                 })
                 .then((response) => {
-                        commit(types.mutations.ADD_ALL_ARTICLES,response.data,{root:true})
+                        commit(types.mutations.ADD_ALL_products,response.data,{root:true})
                         state.problem_state = types.request_status.SUCCEEDED;
                     }
                 )
                 .catch(error=>{
-                    commit(types.mutations.ARTICLES_FAILED,error)
+                    commit(types.mutations.products_FAILED,error)
                 })
-            //commit(types.mutations.ADD_ALL_ARTICLES,articles,{root:true})
+            //commit(types.mutations.ADD_ALL_products,products,{root:true})
             console.log("fetched data");
         },
         cancel_parse(){
