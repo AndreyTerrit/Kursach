@@ -123,7 +123,8 @@
                     <v-divider class="mx-4"></v-divider>
 
                     <v-card-actions>
-                        <router-link :to="'/restourant/' + restourant.name">
+                        
+                        <router-link :to="'/restaurant/' + restourant.name ">
                         
                             <v-btn
                                 color="deep-purple lighten-2"

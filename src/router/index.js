@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import ArticleList from "@/components/ArticleList";
+import ProductsList from "@/components/ProductsList";
 import AddForm from "@/components/AddForm";
 import MyArticle from "@/components/MyArticle";
 import store from "../store"
@@ -11,22 +11,22 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'my-article',
-    component: ArticleList,
+    path: '/restaurant/:name',
+    //name: 'my-article',
+    component: ProductsList,
+    props: (route) => store.state.restaurants_modules.restaurants.find((x) => x.name == route.params.name),
   },
   {
     path: '/AddForm',
     name: 'add-form',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: AddForm
   },
   {
-    path: '/product/:id',
+    path: '/restourant/:name/products/:id',
     component: MyArticle,
-    props: (route) => store.state.products.find((x) => x.id == route.params.id)
+    props: (route) => store.state.products.find((x) => (x.id == route.params.id) && (x.id_restaurant == store.state.restaurants_modules.restaurants.filter(function(restaurant){
+        return restaurant.name == route.params.name;
+    })[0].id_restaurant ))
   },
   {
     path: '/about',

@@ -37,8 +37,8 @@ let restaurants_modules= {
                     signal: controller_parse.signal
                 })
                 .then((response) => {
-                    console.log("this is parse restourants")
-                    console.log(response.data)
+                    //console.log("this is parse restourants")
+                    //console.log(response.data)
                         commit(typesRestaurants.mutations.ADD_ALL_restaurants,response.data)
                         state.problem_state_restaurant = typesRestaurants.request_status.SUCCEEDED;
                         //console.log(store.state.restaurants_modules.restaurants)//ok

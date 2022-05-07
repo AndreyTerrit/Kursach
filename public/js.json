@@ -48,7 +48,68 @@
       "body": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’",
       "quantity": 23,
       "src":"https://a.mktgcdn.com/p/w40Aw5HgkwpVawzHI1dEk0sxXWOS_Gz2ZmRj-mwCFio/1025x768.jpg"
-    }
+    },
+    {
+        "id": 1,
+        "id_restaurant":2,
+        "name": "product kfc 1",
+        "cost": 650,
+        "PCF" : "56, 276, 155.",
+        "weight": "156" ,
+        "units_of_measurement" : "g",
+        "body": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’",
+        "quantity": 3,
+        "published": true,
+        "src":"https://imageproxy.ru/img/crop/1380x920/https/xn--h1ame.xn--80adxhks/storage/app/uploads/public/5e2/700/913/5e27009133781133909110.jpg"
+      },
+      {
+        "id":2,
+        "id_restaurant":2,
+        "name": "product kfc 2",
+        "cost": 150,
+        "PCF" : "142, 67, 122.",
+        "weight": "456",
+        "units_of_measurement" : "g",
+        "body": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’",
+        "quantity": 2,
+        "src":"https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/24750656754573.59bac462befb1.jpg"
+      },
+      {
+        "id":3,
+        "id_restaurant":2,
+        "name":"product kfc 3",
+        "cost": 640,
+        "PCF" : "415, 25, 78.",
+        "weight": "134",
+        "units_of_measurement" : "g",
+        "body": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’",
+        "quantity": 12,
+        "src":"https://avatars.mds.yandex.net/get-zen_doc/3373607/pub_5fd396c30b82510af50856f6_5fd396f29480ec78dc8cd7e2/scale_1200"
+      },
+      {
+        "id":4,
+        "id_restaurant":2,
+        "name": "product kfc 4",
+        "cost": 800,
+        "PCF" : "124, 314, 142.",
+        "weight": "240",
+        "units_of_measurement" : "g",
+        "body": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’",
+        "quantity": 23,
+        "src":"https://imageproxy.ru/img/crop/1380x920/https/xn--h1ame.xn--80adxhks/storage/app/uploads/public/5e2/700/919/5e27009190215117662372.jpg"
+      },
+      {
+        "id":5,
+        "id_restaurant":2,
+        "name": "product kfc 5",
+        "cost": 450,
+        "PCF" : "224, 314, 142.",
+        "weight": "560",
+        "units_of_measurement" : "g",
+        "body": "late 16th century (as a noun denoting a place where alms were distributed): from medieval Latin eleemosynarius, from late Latin eleemosyna ‘alms’, from Greek eleēmosunē ‘compassion’",
+        "quantity": 13,
+        "src":"https://diet-diet.ru/wp-content/uploads/2017/07/kfc.jpg"
+      }
   ],
   "restaurants":[
       {

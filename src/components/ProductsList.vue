@@ -104,18 +104,19 @@
                         </v-card-title>
                         <v-divider></v-divider>
                         <v-card-text class="pb-0">
-                            <v-row>
+                            <v-row justify="space-between">
                                 <v-col>
                                     <p class="">
                                     {{product.weight + product.units_of_measurement}}
                                     </p>
                                 </v-col>
-                                <v-spacer></v-spacer>
+                                
                                 
                                 <v-col
-                                    sm="6"
-                                    xs="6"
-                                    cols="6"
+                                    sm="7"
+                                    xs="7"
+                                    cols="7"
+                                    class="text-end"
                                 >
                                 
                                     <p class="pl-4">
@@ -172,7 +173,14 @@ export default {
     //MyArticle,
   },
   props:{
-      restaurants_list: Array
+        id_restaurant: Number,
+        telephone: String,
+        address: String,
+        name: String,
+        description: String,
+        email: String,
+        src: String,
+        rating: Number
   },
   data(){
     return{
@@ -188,7 +196,7 @@ export default {
         src:this.src
       },
       dialog: false,
-      restaurants:[]
+      restaurants:[],
     }
   }
   ,
@@ -204,8 +212,17 @@ export default {
     }
   },
   computed:{
+      // Динамически формирует список продуктов для конкретного ресторана
       product_list(){
-          return this.$store.state.products;
+        let product_list_all = [];
+        console.log(store.state.restaurants_modules.restaurants.find((x) => x.name == "MCdonald's"))
+        for(let i = 0;i<this.$store.state.products.length;i++){
+            if (this.$store.state.products[i].id_restaurant == this.id_restaurant){
+                product_list_all.push(this.$store.state.products[i]);
+            }
+        }
+        console.log(product_list_all);
+          return product_list_all;
       }
   }
 

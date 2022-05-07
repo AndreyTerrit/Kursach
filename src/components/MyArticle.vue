@@ -107,7 +107,7 @@ export default {
       text_size() {
         if (this.published == true) return 30;
         else return 15;
-      },
+      }
   },
   watch:{
     name(){
