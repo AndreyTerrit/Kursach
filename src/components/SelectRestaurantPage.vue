@@ -124,7 +124,7 @@
 
                     <v-card-actions>
                         
-                        <router-link :to="'/restaurant/' + restourant.name ">
+                        <router-link :to="'/restaurant/' + restourant.name + '/products'">
                         
                             <v-btn
                                 color="deep-purple lighten-2"

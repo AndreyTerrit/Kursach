@@ -88,7 +88,7 @@
                         max-width="344px"
                         outlined
                     >
-                    <router-link :to="'/product/' + product.id">
+                    <router-link :to="'/restaurant/' + name + '/products/'+ product.id">
                         <v-img
                             :src="product.src"
                             height="200px"
@@ -97,7 +97,7 @@
                         </v-img>
                     </router-link>
                     <v-container>
-                        <router-link :to="'/product/' + product.id">
+                        <router-link :to="'/restaurant/' + name + '/products/'+ product.id">
                         <div style="color:black">
                         <v-card-title class=" text-center">
                             <h3 class="text-h4 text--primary">{{product.name}}</h3>

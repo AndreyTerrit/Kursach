@@ -11,7 +11,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/restaurant/:name',
+    path: '/restaurant/:name/products',
     //name: 'my-article',
     component: ProductsList,
     props: (route) => store.state.restaurants_modules.restaurants.find((x) => x.name == route.params.name),
@@ -22,7 +22,7 @@ const routes = [
     component: AddForm
   },
   {
-    path: '/restourant/:name/products/:id',
+    path: '/restaurant/:name/products/:id',
     component: MyArticle,
     props: (route) => store.state.products.find((x) => (x.id == route.params.id) && (x.id_restaurant == store.state.restaurants_modules.restaurants.filter(function(restaurant){
         return restaurant.name == route.params.name;
