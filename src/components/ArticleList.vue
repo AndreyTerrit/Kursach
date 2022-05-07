@@ -3,7 +3,7 @@
     <v-container>
         <!-- ПРИ ЗАГРУЗКЕ СПИСКА -->
             
-            <div class="" v-if="$store.state.load_modules.problem_state == 'requested'">
+            <div class="" v-if="$store.state.products_modules.problem_state == 'requested'">
                 <div class="loading">
                 <h1>Loading...</h1>
                 <br><v-progress-circular
@@ -16,7 +16,7 @@
             </div>
         
         <!-- ПРИ ОШИБКЕ ЗАГРУЗКИ -->
-        <div v-if="$store.state.load_modules.problem_state == 'failed'" class="loading-error">
+        <div v-if="$store.state.products_modules.problem_state == 'failed'" class="loading-error">
 
             <h1>Loading error!</h1>
 
@@ -71,7 +71,7 @@
             </v-dialog>
         </div>
         <!-- ПРИ УСПЕШНОЙ ЗАГРУЗКЕ -->
-        <div v-if="product_list.length > 0 && $store.state.load_modules.problem_state == 'succeeded'">
+        <div v-if="product_list.length > 0 && $store.state.products_modules.problem_state == 'succeeded'">
     <v-container >
         
     <v-row justify="center">
@@ -171,9 +171,13 @@ export default {
   components:{
     //MyArticle,
   },
+  props:{
+      restaurants_list: Array
+  },
   data(){
     return{
       product: {
+          //Не нужено
         name: this.name,
         cost: this.cost,
         PCF: this.PCF,
@@ -184,14 +188,15 @@ export default {
         src:this.src
       },
       dialog: false,
+      restaurants:[]
     }
   }
   ,
   name: "ArticleList",
   methods:{
     reload_products(){
-      store.state.load_modules.problem_state = types.request_status.REQUESTED;
-      store.dispatch('allww');
+      store.state.products_modules.problem_state = types.request_status.REQUESTED;
+      store.dispatch(types.actions.PARSE_products);
       this.dialog = false;
     },
     cancel_parse(){

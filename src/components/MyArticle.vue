@@ -72,10 +72,10 @@
         
     </div >
   </v-card>
-  <div class="text-center">
+  <div class="text-center mt-10" >
       <p class="text-h2"> Попробуйте также !</p>
   </div>
-    <MyCarousel :id = this.id></MyCarousel>
+    <MyCarousel :id = this.id ></MyCarousel>
 </div>
 </template>
 

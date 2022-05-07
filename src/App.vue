@@ -27,6 +27,10 @@
         >
          <router-link to="/carousel"> carousel</router-link>
         </v-tab>
+        <v-tab
+        >
+         <router-link to="/selectRestaurants"> selectRestaurants</router-link>
+        </v-tab>
       </v-tabs>
 
     </v-app-bar>

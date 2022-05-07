@@ -1,13 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import load_module from "@/services/LoadModule";
-
-
+import products_modules from "@/modules/ProductsModul";
+import restaurants_modules from"@/modules/SelectRestaurant";
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    products: [],
+    products: []
   },
   getters: {
   },
@@ -33,6 +32,7 @@ export default new Vuex.Store({
     }
   },
   modules: {
-    load_modules: load_module
+    products_modules: products_modules,
+    restaurants_modules: restaurants_modules
   }
 })

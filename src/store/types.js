@@ -7,9 +7,9 @@ export const types = {
         products_REQUESTED : 'products_REQUESTED'
     },
     actions:{
-        PARSE_products: 'load_modules/parse_products',
+        PARSE_products: 'products_modules/parse_products',
         ADD_product : 'add_product',
-        CANCEL_PARSE : 'load_modules/cancel_parse'
+        CANCEL_PARSE : 'products_modules/cancel_parse'
     },
     request_status: {
         REQUESTED: 'requested',

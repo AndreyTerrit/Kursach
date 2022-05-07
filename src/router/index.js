@@ -6,6 +6,7 @@ import MyArticle from "@/components/MyArticle";
 import store from "../store"
 import AboutPage from "@/components/AboutPage";
 import MyCarousel from "@/components/MyCarousel"
+import selectRestaurantPage from "@/components/SelectRestaurantPage"
 Vue.use(VueRouter)
 
 const routes = [
@@ -36,6 +37,11 @@ const routes = [
     path: '/carousel',
     name: 'carousel',
     component: MyCarousel,
+  },
+  {
+    path: '/selectRestaurants',
+    name: 'selectRestaurants',
+    component: selectRestaurantPage,
   }
 ]
 

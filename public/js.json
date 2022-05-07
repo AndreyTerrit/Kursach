@@ -50,27 +50,36 @@
       "src":"https://a.mktgcdn.com/p/w40Aw5HgkwpVawzHI1dEk0sxXWOS_Gz2ZmRj-mwCFio/1025x768.jpg"
     }
   ],
-  "restaurant":[
+  "restaurants":[
       {
         "id_restaurant":1,
         "telephone": "891811111111",
         "address":"Уральская 79/1",
         "name":"MCdonald's",
-        "email":"example1@mc.ru"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus vitae congue mauris rhoncus. ",
+        "email":"example1@mc.ru",
+        "src": "https://a.mktgcdn.com/p/pbN2RDb0nl1qq_QEunCd-73Q4hJ1YEPRfIh0N8rPIvI/6400x6400.png",
+        "rating" : 4.7
       },
       {
         "id_restaurant":2,
         "telephone": "8918222222222",
         "address":"Уральская 79/2",
         "name":"KFC",
-        "email":"example2@mc.ru"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus vitae congue mauris rhoncus. ",
+        "email":"example2@mc.ru",
+        "src": "https://i.pinimg.com/originals/ff/fe/e3/fffee3e10eb9e68e57921752045a81e4.png",
+        "rating" : 4.1
       },
       {
         "id_restaurant":3,
         "telephone": "891833333333",
         "address":"Уральская 79/3",
         "name":"Sushi",
-        "email":"example3@mc.ru"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus vitae congue mauris rhoncus. ",
+        "email":"example3@mc.ru",
+        "src": "https://static.vecteezy.com/system/resources/previews/000/542/536/original/sushi-food-logo-vector.jpg",
+        "rating" : 4.0
       }
   ]
 }
