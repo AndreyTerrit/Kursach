@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import products_modules from "@/modules/ProductsModul";
 import restaurants_modules from"@/modules/SelectRestaurant";
+import shopping_cart_module from "@/modules/ShoppingCartList"
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -33,6 +34,7 @@ export default new Vuex.Store({
   },
   modules: {
     products_modules: products_modules,
-    restaurants_modules: restaurants_modules
+    restaurants_modules: restaurants_modules,
+    shopping_cart_module: shopping_cart_module
   }
 })

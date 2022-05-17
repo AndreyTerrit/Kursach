@@ -8,7 +8,6 @@
         <v-card v-for="img in rec_list"
             :key="img">
             <v-carousel-item
-            
             :src="img.src"
             reverse-transition="fade-transition"
             transition="fade-transition"
@@ -24,7 +23,8 @@
 export default {
   name: "MyCarousel",
   props:{
-      id:Number,
+    id:Number,
+    id_restaurant:Number
   },
   data(){
     return{
@@ -33,7 +33,12 @@ export default {
   },
   computed:{
         rec_list(){
-            let rec_list = this.$store.state.products.slice(0);
+            let rec_list = [];
+            for(let i = 0;i<this.$store.state.products.length;i++){
+            if (this.$store.state.products[i].id_restaurant == this.id_restaurant){
+                rec_list.push(this.$store.state.products[i]);
+            }
+        }  
             rec_list.splice(this.id-1,1);
             return rec_list;
         }

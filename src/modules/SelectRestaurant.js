@@ -51,7 +51,7 @@ let restaurants_modules= {
             console.log("fetched data");
             
         },
-        cancel_parse(){
+        cancel_parse_restaurants(){
             controller.abort();
         }
     }

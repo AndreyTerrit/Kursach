@@ -9,7 +9,7 @@ export const typesRestaurants = {
     actions:{
         PARSE_restaurants: 'parse_restaurants',
         ADD_restaurant : 'add_restaurant',
-        CANCEL_PARSE : 'cancel_parse'
+        cancel_parse_restaurants : 'cancel_parse_restaurants'
     },
     request_status: {
         REQUESTED: 'requested',

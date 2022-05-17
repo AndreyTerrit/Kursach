@@ -7,6 +7,8 @@ import store from "../store"
 import AboutPage from "@/components/AboutPage";
 import MyCarousel from "@/components/MyCarousel"
 import selectRestaurantPage from "@/components/SelectRestaurantPage"
+import ShoppingCart from "@/components/ShoppingCart"
+import AuthUser from "@/components/AuthUser"
 Vue.use(VueRouter)
 
 const routes = [
@@ -24,6 +26,7 @@ const routes = [
   {
     path: '/restaurant/:name/products/:id',
     component: MyArticle,
+    //Динамически формируем пропсы для отображения конкретных продуктов конкретного ресторана.
     props: (route) => store.state.products.find((x) => (x.id == route.params.id) && (x.id_restaurant == store.state.restaurants_modules.restaurants.filter(function(restaurant){
         return restaurant.name == route.params.name;
     })[0].id_restaurant ))
@@ -42,6 +45,16 @@ const routes = [
     path: '/selectRestaurants',
     name: 'selectRestaurants',
     component: selectRestaurantPage,
+  },
+  {
+    path: '/ShoppingCart',
+    //name: 'my-article',
+    component: ShoppingCart,
+    //props: (route) => store.state.restaurants_modules.restaurants.find((x) => x.name == route.params.name),
+  },
+  {
+      path:'/auth',
+      component: AuthUser
   }
 ]
 
