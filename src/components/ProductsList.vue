@@ -93,8 +93,7 @@
               <router-link
                 :to="'/restaurant/' + name + '/products/' + product.id"
               >
-                <v-img :src="product.src" height="200px" min-width="344px">
-                </v-img>
+                <v-img :src="product.src" height="200px"> </v-img>
               </router-link>
               <v-container>
                 <router-link
@@ -107,13 +106,13 @@
                     <v-divider></v-divider>
                     <v-card-text class="pb-0">
                       <v-row justify="space-between">
-                        <v-col>
+                        <v-col cols="3">
                           <p class="">
                             {{ product.weight + product.units_of_measurement }}
                           </p>
                         </v-col>
 
-                        <v-col sm="7" xs="7" cols="7" class="text-end">
+                        <v-col sm="7" xs="7" cols="9" class="text-end">
                           <p class="pl-4">
                             {{ "БЖУ : " + product.PCF }}
                           </p>
@@ -129,7 +128,7 @@
                             Стоимость :
                           </p>
                         </v-col>
-                        <v-col sm="3" cols="3">
+                        <v-col sm="3" cols="4">
                           <p class="font-weight-bold text--primary">
                             {{ product.cost + " ₽" }}
                           </p>
