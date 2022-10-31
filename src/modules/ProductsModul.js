@@ -11,6 +11,7 @@ let load_module= {
     namespaced: true,
     state:{
         problem_state: "",
+        products_error: ""
     },
     mutations:{
         products_REQUESTED(state) {

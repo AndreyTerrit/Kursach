@@ -93,6 +93,7 @@
                           required
                         ></v-text-field>
                       </validation-provider>
+
                       <validation-provider
                         v-slot="{ errors }"
                         name="phoneNumber"
@@ -106,6 +107,20 @@
                           :counter="11"
                           :error-messages="errors"
                           label="Номер телефона"
+                          required
+                        ></v-text-field>
+                      </validation-provider>
+
+                      <validation-provider
+                        v-slot="{ errors }"
+                        name="address"
+                        rules="required|max:15"
+                      >
+                        <v-text-field
+                          v-model="address"
+                          :counter="50"
+                          :error-messages="errors"
+                          label="Адрес"
                           required
                         ></v-text-field>
                       </validation-provider>
@@ -236,6 +251,7 @@ export default {
       payment_method: "",
       card_number: "",
       card_name: " ",
+      address: "",
     };
   },
   computed: {
@@ -276,6 +292,7 @@ export default {
       this.card_number = "";
       this.card_name = "";
       this.$refs.observer.reset();
+      this.address = "";
     },
   },
 };

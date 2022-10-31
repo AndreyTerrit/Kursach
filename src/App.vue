@@ -12,7 +12,12 @@
           <router-link to="/about"> About</router-link>
         </v-tab> -->
         <v-tab>
-          <router-link to="/ShoppingCart"> Корзина</router-link>
+          <div class="shoppingCartRef">
+            <div class="shoppingCartRefCounter">
+              {{ this.$store.state.shopping_cart_module.quantity }}
+            </div>
+            <router-link to="/ShoppingCart"> Корзина</router-link>
+          </div>
         </v-tab>
         <v-tab>
           <router-link to="/auth"> Войти</router-link>
@@ -43,8 +48,18 @@ export default {
   name: "App",
 
   data: () => ({
-    //
+    quantity: 0,
   }),
+  //   computed: {
+  //     quantity_all_dishes() {
+  //       //Не менять текущую переменную а создать новую
+  //       let quantity = 0;
+  //       for (let dish of this.$store.state.shopping_cart_module.dishes_list) {
+  //         quantity += dish.quantity_in_cart;
+  //       }
+  //       return quantity;
+  //     },
+  //   },
   beforeMount() {
     this.$router.push("/selectRestaurants");
   },
@@ -61,5 +76,21 @@ a {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.shoppingCartRef {
+  position: relative;
+}
+.shoppingCartRefCounter {
+  position: absolute;
+  top: -16px;
+  right: -10px;
+  border-radius: 50%;
+  background: #dcdcdc;
+  color: #2c3e50;
+  height: 22px;
+  width: 22px;
+  padding-top: 3px;
+  font-size: 12px;
+  font-weight: bold;
 }
 </style>

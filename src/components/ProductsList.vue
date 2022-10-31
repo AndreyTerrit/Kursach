@@ -24,7 +24,9 @@
       v-if="$store.state.products_modules.problem_state == 'failed'"
       class="loading-error"
     >
-      <h1>Loading error!</h1>
+      <h1>
+        Loading error! + {{ $store.state.products_modules.products_error }}
+      </h1>
 
       <v-dialog v-model="dialog" width="500">
         <template v-slot:activator="{ on, attrs }">
